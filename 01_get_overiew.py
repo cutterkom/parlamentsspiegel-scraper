@@ -27,14 +27,7 @@ def load_querywords(INPUT_FILE, list_querywords):
 	ifile.close()
 	return(list_querywords)
 
-# def save_csv(OUTPUT_FILE, list_links, queryword):
-# 	print("dsafdasfasdf " + queryword[0])
-# 	dict = {'queryword': queryword[0], 'links': list_links}
-# 	df = pd.DataFrame(dict) 
-# 	# saving the dataframe 
-# 	df.to_csv('file1.csv') 
 def save_csv(OUTPUT_FILE, list_links, queryword):
-	#rows = zip(list_links, queryword)
 	with open(OUTPUT_FILE, 'w') as f:
 		writer = csv.writer(f, dialect="excel", quoting = csv.QUOTE_ALL)
 		# for row in rows:
@@ -43,18 +36,6 @@ def save_csv(OUTPUT_FILE, list_links, queryword):
 		writer.writerow(keys)
 		for item in list_links:
 			writer.writerow([item])
-
-# def save_csv(OUTPUT_FILE, list_links, queryword):
-# 	print("dsafdasfasdf " + queryword[0])
-# #	rows = zip(list_links, queryword)
-# 	with open(OUTPUT_FILE, 'w') as f:
-# 		writer = csv.writer(f, dialect="excel", quoting = csv.QUOTE_ALL)
-# 		# for row in rows:
-# 		# 	writer.writerow(row)
-# 		keys = ["link", "queryword"]
-# 		writer.writerow(keys)
-# 		for item in list_links:
-# 			writer.writerow([item, queryword[0]])
 
 def get_overview(BASE_URL, queryword):
 	
@@ -94,11 +75,9 @@ def get_overview(BASE_URL, queryword):
 		# get all link zu detailseiten
 		links = soup.find_all("a", {"class": "beratungsstand"})#
 
-		# man muss da so blöd drüber loopen um sie in die liste zu bekommen
 		for link in links:
 			if link.has_attr('href'):
 				beratungslinks.append(link["href"])
-				#print(link)
 		print("vorm speichern " + queryword[0])
 		print(len(beratungslinks))
 		save_csv(OUTPUT_FILE, beratungslinks, queryword)    
