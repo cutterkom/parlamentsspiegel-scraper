@@ -10,9 +10,8 @@ The crawler is written in Python, the parsing in R.
 
 ## Setup
 
-* create a virtual * start virtual environment `source env/bin/activate`
- `python3 -m venv env`
-* start virtual environment `source env/bin/activate`
+* create a virtual: `python3 -m venv env`
+* activate it: `source env/bin/activate`
 * install requirements: `pip3 install -r requirements.txt`
 
 ## Use it
