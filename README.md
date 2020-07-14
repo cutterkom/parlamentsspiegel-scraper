@@ -16,7 +16,7 @@ The crawler is written in Python, the parsing in R.
 
 ## Use it
 
-* Write your querywords in `input/searchwords.txt`
+* Write your querywords in `input/searchwords.csv`
 * and the [official tags ("Schlagworte")](https://www.parlamentsspiegel.de/sites/parlamentsspiegel/home/indexeinblick.html) you're interested in `input/keywords.csv`
 * run `01_get_overview.py` to fetch all overview tables, which will be stored as `html` files in `input/html/overview/` and relevant links in `input/data/links_beratungsstand.csv`
 * then run `02_get_detailpages.py` to get all the information for every document, the resulting `html` files can be found in `input/html/beratungsstand/`
