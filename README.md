@@ -27,4 +27,7 @@ The crawler is written in Python, the parsing in R.
 2. `02_get_detailpages.py`: to get all the information for every single document, the resulting `html` files can be found in `input/html/beratungsstand/`
 3. `03_parsing.R`: to free metadata and to get a csv file with parsed information, that can be found in `input/data/df.csv`
 
-
+## To Do
+- [ ] clear distiction between `input` and `output`
+- [ ] automate folder creation
+- [ ] improve metadata parsing
