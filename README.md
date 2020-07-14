@@ -16,10 +16,15 @@ The crawler is written in Python, the parsing in R.
 
 ## Use it
 
-* Write your querywords in `input/searchwords.csv`
-* and the [official tags ("Schlagworte")](https://www.parlamentsspiegel.de/sites/parlamentsspiegel/home/indexeinblick.html) you're interested in `input/keywords.csv`
-* run `01_get_overview.py` to fetch all overview tables, which will be stored as `html` files in `input/html/overview/` and relevant links in `input/data/links_beratungsstand.csv`
-* then run `02_get_detailpages.py` to get all the information for every document, the resulting `html` files can be found in `input/html/beratungsstand/`
-* and then run `03_parsing.R` in order to free some metadata and you get a csv file with parsed meta data `input/data/df.csv`
+### Define your search interest
+
+1. Write your search words for the search input field in `input/searchwords.csv`
+2. and the [official tags ("Schlagworte")](https://www.parlamentsspiegel.de/sites/parlamentsspiegel/home/indexeinblick.html) you're interested in `input/keywords.csv`
+
+### Run scripts 
+
+1. `01_get_overview.py`: to fetch all overview tables, which will be stored as `html` files in `input/html/overview/` and relevant links in `input/data/links_beratungsstand.csv`
+2. `02_get_detailpages.py`: to get all the information for every single document, the resulting `html` files can be found in `input/html/beratungsstand/`
+3. `03_parsing.R`: to free metadata and to get a csv file with parsed information, that can be found in `input/data/df.csv`
 
 
